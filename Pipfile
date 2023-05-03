@@ -5,7 +5,10 @@ name = "pypi"
 
 [packages]
 scrapy = "*"
+selenium = "*"
+webdriver-manager = "*"
 pandas = "*"
+openpyxl = "*"
 
 [dev-packages]
 
