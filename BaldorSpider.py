@@ -1,5 +1,4 @@
 import scrapy
-from scrapy import FormRequest
 
 class BaldorSpider(scrapy.Spider):
     name = 'Baldor Food'
