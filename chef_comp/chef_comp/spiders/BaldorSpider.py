@@ -3,7 +3,7 @@ import re
 import pandas as pd
 
 class BaldorSpider(scrapy.Spider):
-    name = 'Baldor Food'
+    name = 'BaldorSpider'
     start_urls = ['https://www.baldorfood.com/products/vegetables/artichokes',
                   'https://www.baldorfood.com/products/fruits/stone-fruit',
                   'https://www.baldorfood.com/products/vegetables/asparagus',
@@ -31,7 +31,7 @@ class BaldorSpider(scrapy.Spider):
             for div in response.css('div.table-cover-back'):
                 name = div.css('div.product-title-and-sku > div.pct-heading > h3 > a::text').get()
                 name_lower = name.lower()
-                if name_lower in ['artichokes', 'radishes', 'plums', 'celery', 'asparagus', 'baby artichokes', 'bananas', 'oranges', 'apples']:
+                if name_lower in self.titles:
                     item ={}
                     price_text = div.css('div.product-title-and-sku > span.pct-price-unit > span.price::text').get()
                     price_int = float(price_text.replace('$', '').replace(' ', '').replace('/', ''))
@@ -48,7 +48,3 @@ class BaldorSpider(scrapy.Spider):
                     item['price'] = price_text + quantity_text
                     item['price per unit'] = round(price_int / quantity_int, 2)
                     yield item
-            
-            # df = pd.DataFrame(data_list)
-            # df.to_excel('output.xlsx', index=False)
-        
