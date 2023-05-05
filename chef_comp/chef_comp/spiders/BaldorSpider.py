@@ -1,6 +1,5 @@
 import scrapy
 import re
-import pandas as pd
 
 class BaldorSpider(scrapy.Spider):
     name = 'BaldorSpider'
@@ -23,7 +22,6 @@ class BaldorSpider(scrapy.Spider):
          self.titles = titles
 
     def start_requests(self):
-
         for url in self.start_urls:
             yield scrapy.Request(url, cookies=self.cookies, callback = self.parse)
 
