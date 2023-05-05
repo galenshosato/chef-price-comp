@@ -1,242 +1,442 @@
 [
 {
+    "name": "Baby Artichokes",
+    "price": "$160.70 / 20 LB",
+    "price per unit": 8.04
+},
+{
+    "name": "Baby Artichokes",
+    "price": "$160.70 / 20 LB",
+    "price per unit": 8.04
+},
+{
+    "name": "Large Loose Artichokes",
+    "price": "$105.35 / 20 LB",
+    "price per unit": 5.27
+},
+{
+    "name": "Artichokes",
+    "price": "$57.45 / 24 CT",
+    "price per unit": 2.39
+},
+{
+    "name": "Artichokes",
+    "price": "$55.50 / 18 CT",
+    "price per unit": 3.08
+},
+{
+    "name": "Artichokes",
+    "price": "$52.25 / 12 CT",
+    "price per unit": 4.35
+},
+{
+    "name": "Artichokes",
+    "price": "$49.00 / 30/36 CT",
+    "price per unit": 1.36
+},
+{
+    "name": "Puple Artichokes",
+    "price": "$64.50 / 12-18 CT",
+    "price per unit": 3.58
+},
+{
+    "name": "Artichokes",
+    "price": "$65.10 / 24 CT",
+    "price per unit": 2.71
+},
+{
+    "name": "Organic Artichokes",
+    "price": "$69.80 / 24 CT",
+    "price per unit": 2.91
+},
+{
+    "name": "Organic Artichokes",
+    "price": "$55.90 / 12 CT",
+    "price per unit": 4.66
+},
+{
+    "name": "Red Plums",
+    "price": "$73.45 / 48-56 CT X 2 LYR",
+    "price per unit": 1.31
+},
+{
+    "name": "Green Ume Plums",
+    "price": "$68.35 / 5 LB",
+    "price per unit": 13.67
+},
+{
+    "name": "Black Plums",
+    "price": "$62.25 / 48-56 CT X 2 LYR",
+    "price per unit": 1.11
+},
+{
+    "name": "Bananas Ready to Go No.6",
+    "price": "$31.30 / 40 LB",
+    "price per unit": 0.78
+},
+{
+    "name": "Bananas Green Tip No.5",
+    "price": "$31.30 / 40 LB",
+    "price per unit": 0.78
+},
+{
+    "name": "Bananas 2 Days Away No.4",
+    "price": "$31.55 / 40 LB",
+    "price per unit": 0.79
+},
+{
+    "name": "Green Bananas",
+    "price": "$30.55 / 40 LB",
+    "price per unit": 0.76
+},
+{
+    "name": "Frozen IQF Sliced Bananas",
+    "price": "$26.85 / 20 LB",
+    "price per unit": 1.34
+},
+{
+    "name": "Frozen Organic Sliced Bananas",
+    "price": "$56.45 / 30 LB",
+    "price per unit": 1.88
+},
+{
+    "name": "Baby Bananas",
+    "price": "$27.25 / 15 LB",
+    "price per unit": 1.82
+},
+{
+    "name": "Petite Bananas #4",
+    "price": "$31.35 / 150 CT",
+    "price per unit": 0.21
+},
+{
+    "name": "Petite Bananas #5",
+    "price": "$27.10 / 150 CT",
+    "price per unit": 0.18
+},
+{
+    "name": "Organic Bananas Two Days Away",
+    "price": "$42.60 / 40 LB",
+    "price per unit": 1.06
+},
+{
+    "name": "Julienne Radishes",
+    "price": "$21.80 / 1 X 5 LB",
+    "price per unit": 4.36
+},
+{
+    "name": "1/8 Sliced Radishes",
+    "price": "$28.35 / 5 LB",
+    "price per unit": 5.67
+},
+{
+    "name": "Radishes",
+    "price": "$0.70 / 6 OZ",
+    "price per unit": 0.12
+},
+{
+    "name": "Purple Ninja Radishes",
+    "price": "$48.55 / 24 CT",
+    "price per unit": 2.02
+},
+{
+    "name": "Large Daikon Radishes",
+    "price": "$39.45 / 40 LB",
+    "price per unit": 0.99
+},
+{
+    "name": "Daikon Radishes",
+    "price": "$18.80 / 10 LB",
+    "price per unit": 1.88
+},
+{
+    "name": "Shredded Daikon Radishes",
+    "price": "$77.90 / 1 X 5 LB",
+    "price per unit": 15.58
+},
+{
+    "name": "Bunched Radishes",
+    "price": "$20.95 / 24 CT",
+    "price per unit": 0.87
+},
+{
+    "name": "Bunched Radishes",
+    "price": "$16.15 / 6 BU",
+    "price per unit": 2.69
+},
+{
+    "name": "Red Radishes",
+    "price": "$33.70 / 40 LB",
+    "price per unit": 0.84
+},
+{
+    "name": "French Breakfast Radishes",
+    "price": "$43.20 / 24 CT",
+    "price per unit": 1.8
+},
+{
+    "name": "Black Radishes",
+    "price": "$17.70 / 10 LB",
+    "price per unit": 1.77
+},
+{
+    "name": "Celery",
+    "price": "$41.65 / 24 CT",
+    "price per unit": 1.74
+},
+{
+    "name": "Celery",
+    "price": "$30.00 / 12 CT",
+    "price per unit": 2.5
+},
+{
+    "name": "Celery",
+    "price": "$20.65 / 1 X 3 CT",
+    "price per unit": 6.88
+},
+{
+    "name": "Celery",
+    "price": "$40.15 / 30 CT",
+    "price per unit": 1.34
+},
+{
+    "name": "Celery",
+    "price": "$38.30 / 30 CT",
+    "price per unit": 1.28
+},
+{
+    "name": "Celery Root",
+    "price": "$34.25 / 20 LB",
+    "price per unit": 1.71
+},
+{
+    "name": "Peeled Celery Knob",
+    "price": "$39.50 / 5 LB",
+    "price per unit": 7.9
+},
+{
+    "name": "Diced Celery Knob",
+    "price": "$38.95 / 4 X 5 LB",
+    "price per unit": 7.79
+},
+{
+    "name": "1/2 Chopped Celery",
+    "price": "$47.40 / 4 X 5 LB",
+    "price per unit": 9.48
+},
+{
+    "name": "1/4 Chopped Celery",
+    "price": "$41.15 / 4 X 5 LB",
+    "price per unit": 8.23
+},
+{
+    "name": "1/4 Chopped Celery",
+    "price": "$15.85 / 5 LB",
+    "price per unit": 3.17
+},
+{
+    "name": "4 Celery Sticks",
+    "price": "$61.15 / 4 X 5 LB",
+    "price per unit": 12.23
+},
+{
+    "name": "Celery Sticks",
+    "price": "$21.25 / 5 LB",
+    "price per unit": 4.25
+},
+{
+    "name": "4 Loose Pack Celery Sticks",
+    "price": "$51.30 / 4 X 5 LB",
+    "price per unit": 10.26
+},
+{
+    "name": "3/8 Diced Celery",
+    "price": "$25.35 / 5 LB",
+    "price per unit": 5.07
+},
+{
+    "name": "1/4 Sliced Celery",
+    "price": "$70.40 / 4 X 5 LB",
+    "price per unit": 14.08
+},
+{
+    "name": "3/4 Diced Celery",
+    "price": "$43.45 / 4 X 5 LB",
+    "price per unit": 8.69
+},
+{
+    "name": "Celery Hearts",
+    "price": "$31.80 / 18 X 2 CT",
+    "price per unit": 1.77
+},
+{
+    "name": "Sleeved Organic Celery",
+    "price": "$58.30 / 30 CT",
+    "price per unit": 1.94
+},
+{
+    "name": "Organic Celery",
+    "price": "$43.85 / 24 CT",
+    "price per unit": 1.83
+},
+{
+    "name": "Organic Celery Hearts",
+    "price": "$45.05 / 18 X 2 CT",
+    "price per unit": 2.5
+},
+{
+    "name": "Fancy Navel Oranges",
+    "price": "$50.55 / 56 CT",
+    "price per unit": 0.9
+},
+{
+    "name": "Red Delicious Apples",
+    "price": "$47.20 / 80-88 CT",
+    "price per unit": 0.54
+},
+{
+    "name": "Red Delicious Apples",
+    "price": "$51.70 / 80-88 CT",
+    "price per unit": 0.59
+},
+{
+    "name": "Red Delicious Apples",
+    "price": "$46.80 / 125 CT",
+    "price per unit": 0.37
+},
+{
+    "name": "Lady Red Delicious Apples",
+    "price": "$18.20 / 10 LB",
+    "price per unit": 1.82
+},
+{
+    "name": "RubyFrost Apples",
+    "price": "$45.85 / 12 X 2 LB",
+    "price per unit": 3.82
+},
+{
+    "name": "RubyFrost Apples",
+    "price": "$53.35 / 50-60 CT",
+    "price per unit": 0.89
+},
+{
+    "name": "Golden Delicious Apples",
+    "price": "$49.75 / 80-88 CT",
+    "price per unit": 0.57
+},
+{
+    "name": "Granny Smith Apples",
+    "price": "$59.10 / 80-88 CT",
+    "price per unit": 0.67
+},
+{
+    "name": "Granny Smith Apples (No Stickers)",
+    "price": "$55.65 / 100 CT",
+    "price per unit": 0.56
+},
+{
+    "name": "Peeled and Cored Granny Smith Apples",
+    "price": "$135.60 / 20 LB",
+    "price per unit": 6.78
+},
+{
+    "name": "1/2 Peeled Sliced Granny Smith Apples",
+    "price": "$89.20 / 2 X 10 LB",
+    "price per unit": 8.92
+},
+{
+    "name": "1/4 Peeled and Sliced Granny Smith Apples",
+    "price": "$90.40 / 2 X 10 LB",
+    "price per unit": 9.04
+},
+{
+    "name": "Peeled and Cored Honey Crisp Apples",
+    "price": "$124.65 / 2 X 10 LB",
+    "price per unit": 12.46
+},
+{
+    "name": "Peeled and Sliced Gala Apples",
+    "price": "$111.35 / 2 X 10 LB",
+    "price per unit": 11.13
+},
+{
+    "name": "1/2 Peeled and Diced Green Apples",
+    "price": "$156.95 / 2 X 10 LB",
+    "price per unit": 15.69
+},
+{
+    "name": "Peeled & Sliced Golden Delicious Apples",
+    "price": "$105.40 / 2 X 10 LB",
+    "price per unit": 10.54
+},
+{
+    "name": "Granny Smith Apples",
+    "price": "$57.30 / 100 CT",
+    "price per unit": 0.57
+},
+{
+    "name": "Granny Smith Juicing/Baking Apples",
+    "price": "$34.15 / 38 LB",
+    "price per unit": 0.9
+},
+{
+    "name": "Premium Granny Smith Apples",
+    "price": "$63.80 / 64-72 CT",
+    "price per unit": 0.89
+},
+{
+    "name": "Lady Granny Smith Apples",
+    "price": "$24.45 / 10 LB",
+    "price per unit": 2.44
+},
+{
+    "name": "McIntosh Apples",
+    "price": "$54.45 / 80-88 CT",
+    "price per unit": 0.62
+},
+{
+    "name": "Pink Lady Apples",
+    "price": "$49.65 / 80-88 CT",
+    "price per unit": 0.56
+},
+{
+    "name": "Wild Twist Apples",
+    "price": "$34.65 / 12 X 2 LB",
+    "price per unit": 2.89
+},
+{
+    "name": "McIntosh Apples",
+    "price": "$42.85 / 125 CT",
+    "price per unit": 0.34
+},
+{
+    "name": "Premium Pink Lady Apples",
+    "price": "$58.90 / 64-72 CT",
+    "price per unit": 0.82
+},
+{
     "name": "Honeycrisp Apples",
-    "price": 2.99
+    "price": "$97.95 / 18 X 2 LB",
+    "price per unit": 5.44
 },
 {
-    "name": "Lemons",
-    "price": 0.89
+    "name": "SnapDragon Apples",
+    "price": "$46.60 / 12 X 2 LB",
+    "price per unit": 3.88
 },
 {
-    "name": "Organic Blueberries Pint",
-    "price": 5.99
+    "name": "Honeycrisp Apples",
+    "price": "$70.85 / 80-88 CT",
+    "price per unit": 0.81
 },
 {
-    "name": "Organic Raspberries",
-    "price": 7.49
+    "name": "Panta-Pack Honeycrisp Apples",
+    "price": "$31.10 / 20 CT",
+    "price per unit": 1.56
 },
 {
-    "name": "Organic Blueberries Pint",
-    "price": 5.49
-},
-{
-    "name": "Lime",
-    "price": 69.0
-},
-{
-    "name": "Vine Tomato",
-    "price": 1.99
-},
-{
-    "name": "Organic Garnet Sweet Potato",
-    "price": 2.39
-},
-{
-    "name": "Organic Yellow Onion",
-    "price": 1.89
-},
-{
-    "name": "Organic Garlic",
-    "price": 6.99
-},
-{
-    "name": "Hearts of Romaine",
-    "price": 4.99
-},
-{
-    "name": "Organic Cilantro Bunch",
-    "price": 1.99
-},
-{
-    "name": "Organic Baby Broccoli",
-    "price": 3.99
-},
-{
-    "name": "Broccoli Crowns",
-    "price": 1.99
-},
-{
-    "name": "Organic Broccoli Florets",
-    "price": 4.29
-},
-{
-    "name": "Zucchini Squash",
-    "price": 1.99
-},
-{
-    "name": "Organic Baby Spinach Greens (16 Oz)",
-    "price": 5.49
-},
-{
-    "name": "Organic Green Onion",
-    "price": 1.49
-},
-{
-    "name": "Organic Baby Arugula",
-    "price": 3.49
-},
-{
-    "name": "Organic Blackberries",
-    "price": 4.99
-},
-{
-    "name": "Organic Packaged Vegetables, Green Beans - Trimmed",
-    "price": 4.29
-},
-{
-    "name": "Organic Navel Oranges",
-    "price": 2.39
-},
-{
-    "name": "Organic Green Kale",
-    "price": 2.79
-},
-{
-    "name": "Strawberries",
-    "price": 4.49
-},
-{
-    "name": "Russet Potato",
-    "price": 1.29
-},
-{
-    "name": "Organic Ginger Root",
-    "price": 4.99
-},
-{
-    "name": "Organic Packaged Chopped Salad Kit, Kale Caesar",
-    "price": 4.99
-},
-{
-    "name": "Seedless Watermelon",
-    "price": 6.99
-},
-{
-    "name": "Celery Bunch",
-    "price": 1.99
-},
-{
-    "name": "Organic Japanese Sweet Potato",
-    "price": 2.39
-},
-{
-    "name": "Organic Japanese Sweet Potato",
-    "price": 2.49
-},
-{
-    "name": "Organic Avocado Hass Bag",
-    "price": 6.99
-},
-{
-    "name": "Organic Lemon 32oz Bag",
-    "price": 5.49
-},
-{
-    "name": "Organic Russet Potato",
-    "price": 1.69
-},
-{
-    "name": "Produce - Packaged Vegetables, Broccoli - Florets",
-    "price": 3.29
-},
-{
-    "name": "Wild Wonders Gourmet Medley Tomatoes",
-    "price": 4.29
-},
-{
-    "name": "Organic Loose Red Beet",
-    "price": 2.49
-},
-{
-    "name": "Organic Green Cabbage",
-    "price": 1.29
-},
-{
-    "name": "Produce - Organic Packaged Baby Spinach",
-    "price": 2.49
-},
-{
-    "name": "Produce - Organic Packaged Baby Spinach",
-    "price": 2.79
-},
-{
-    "name": "Organic Romaine Lettuce",
-    "price": 3.49
-},
-{
-    "name": "Organic Loose Carrots",
-    "price": 1.49
-},
-{
-    "name": "Organic Packaged Vegetables, Sugar Snap Peas",
-    "price": 3.99
-},
-{
-    "name": "Organic Blueberries Half Pint",
-    "price": 4.99
-},
-{
-    "name": "Angel Sweet Cherry Tomatoes",
-    "price": 6.99
-},
-{
-    "name": "Organic Spring Mix",
-    "price": 5.99
-},
-{
-    "name": "Organic Carrots (5 Pound)",
-    "price": 4.99
-},
-{
-    "name": "Hot House English Cucumber",
-    "price": 1.79
-},
-{
-    "name": "Organic Red Radish Bunch",
-    "price": 2.49
-},
-{
-    "name": "Organic Dino Kale",
-    "price": 2.79
-},
-{
-    "name": "Super Sweet Navel Oranges",
-    "price": 1.99
-},
-{
-    "name": "Heirloom Tomato",
-    "price": 4.29
-},
-{
-    "name": "Heirloom Tomato",
-    "price": 4.99
-},
-{
-    "name": "Organic Red Cabbage",
-    "price": 1.49
-},
-{
-    "name": "Packaged Chopped Salad Kit, Sweet Kale",
-    "price": 4.49
-},
-{
-    "name": "365 Classic Caesar Salad Kit",
-    "price": 4.99
-},
-{
-    "name": "Organic Yellow Potato",
-    "price": 2.49
-},
-{
-    "name": "True Hearts Romaine",
-    "price": 4.39
-},
-{
-    "name": "Green Onion",
-    "price": 1.09
-},
-{
-    "name": "Green Onion",
-    "price": 0.99
+    "name": "SnapDragon Apples",
+    "price": "$56.70 / 50-65 CT",
+    "price per unit": 0.87
 }
 ]
