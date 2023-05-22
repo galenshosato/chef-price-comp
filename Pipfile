@@ -9,6 +9,10 @@ selenium = "*"
 webdriver-manager = "*"
 pandas = "*"
 openpyxl = "*"
+flask = "*"
+flask-migrate = "*"
+flask-sqlalchemy = "*"
+sqlalchemy = "*"
 
 [dev-packages]
 
