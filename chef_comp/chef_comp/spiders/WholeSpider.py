@@ -1,5 +1,5 @@
 import scrapy
-import re
+
 
 
 class WholeSpider(scrapy.Spider):
@@ -8,7 +8,15 @@ class WholeSpider(scrapy.Spider):
     start_urls = ['https://www.wholefoodsmarket.com/products/produce']
 
     cookies = {
-    
+        "csm-sid": "",
+        "session-id-time": "",
+        "_ga": "",
+        "ubid-main": "",
+        "wfm_store_d8": "",
+        "wfm_store_weak": "",
+        "session-token": "",
+        "_gid": "",
+
         }
 
 

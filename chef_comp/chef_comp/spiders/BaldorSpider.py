@@ -15,7 +15,7 @@ class BaldorSpider(scrapy.Spider):
                   'https://www.baldorfood.com/products/fruits/apples?viewall=1'
                   ]
 
-    cookies = { 'PHPSESSID': 'cvnjtu5rsm9vspd481bi4r5qmm'}
+    cookies = { 'PHPSESSID': ''}
 
     def __init__(self, titles=None, *args, **kwargs):
          super(BaldorSpider, self).__init__(*args, **kwargs)
