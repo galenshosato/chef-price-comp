@@ -1,5 +1,6 @@
 from extensions import db
 from sqlalchemy import JSON
+from datetime import datetime
 
 
 class BaldorFood(db.Model):
@@ -9,6 +10,8 @@ class BaldorFood(db.Model):
     product = db.Column(db.String)
     price = db.Column(db.String)
     price_per_unit = db.Column(db.Integer)
+    created_at = db.Column(db.DateTime, default = datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default = datetime.utcnow, onupdate = datetime.utcnow)
 
     def to_dict(self):
         return {

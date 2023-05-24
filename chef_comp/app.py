@@ -26,8 +26,7 @@ with open('output.json') as f:
     data = json.load(f)
 
 
-df = pd.DataFrame(data)
-df.to_excel('results.xlsx', index=False)
+
 
 
 
