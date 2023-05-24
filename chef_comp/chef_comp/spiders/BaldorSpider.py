@@ -3,16 +3,16 @@ import re
 
 class BaldorSpider(scrapy.Spider):
     name = 'BaldorSpider'
-    start_urls = ['https://www.baldorfood.com/products/vegetables/artichokes',
-                  'https://www.baldorfood.com/products/fruits/stone-fruit',
-                  'https://www.baldorfood.com/products/vegetables/asparagus',
-                  'https://www.baldorfood.com/products/vegetables/beans-peas',
-                  'https://www.baldorfood.com/products/vegetables/broccoli',
-                  'https://www.baldorfood.com/products/vegetables/radishes',
-                  'https://www.baldorfood.com/products/vegetables/celery',
-                  'https://www.baldorfood.com/products/fruits/bananas',
-                  'https://www.baldorfood.com/products/fruits/citrus',
-                  'https://www.baldorfood.com/products/fruits/apples'
+    start_urls = ['https://www.baldorfood.com/products/vegetables/artichokes?viewall=1',
+                  'https://www.baldorfood.com/products/fruits/stone-fruit?viewall=1',
+                  'https://www.baldorfood.com/products/vegetables/asparagus?viewall=1',
+                  'https://www.baldorfood.com/products/vegetables/beans-peas?viewall=1',
+                  'https://www.baldorfood.com/products/vegetables/broccoli?viewall=1',
+                  'https://www.baldorfood.com/products/vegetables/radishes?viewall=1',
+                  'https://www.baldorfood.com/products/vegetables/celery?viewall=1',
+                  'https://www.baldorfood.com/products/fruits/bananas?viewall=1',
+                  'https://www.baldorfood.com/products/fruits/citrus?viewall=1',
+                  'https://www.baldorfood.com/products/fruits/apples?viewall=1'
                   ]
 
     cookies = { 'PHPSESSID': 'cvnjtu5rsm9vspd481bi4r5qmm'}
@@ -33,13 +33,21 @@ class BaldorSpider(scrapy.Spider):
                     if title in name_lower:
                         item ={}
                         price_text = div.css('div.product-title-and-sku > span.pct-price-unit > span.price::text').get()
-                        price_int = float(price_text.replace('$', '').replace(' ', '').replace('/', ''))
+                        if not price_text:
+                            continue
+                        price_int = float(price_text[1:6])
                         quantity_text = div.css('div.product-title-and-sku > span.pct-price-unit > span.price > span.price-unit::text').get()
-                        numbers = re.findall(r'\d+', quantity_text)
+                        numbers = []
+                        if quantity_text == '1/2 CRATE':
+                            numbers = ['.5']
+                        else:
+                            numbers = re.findall(r'\d+', quantity_text)
                         quantity_int=''
                         for number in numbers:
-                            number = int(number)
+                            number = float(number)
                             if number >= 3:
+                                quantity_int = number
+                            elif 0 < number < 1:
                                 quantity_int = number
                             else:
                                 print('Still works')
