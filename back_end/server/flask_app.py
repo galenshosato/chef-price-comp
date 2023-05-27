@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request, make_response, Response, session as browser_session
-from extensions import *
+from back_end.server.extensions import *
 
 
 app = Flask(__name__)

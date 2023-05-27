@@ -3,9 +3,9 @@ import sys
 import json
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
-from chef_comp.spiders.BaldorSpider import BaldorSpider
-from chef_comp.spiders.WholeSpider import WholeSpider
-from chef_comp.spiders.WalSpider import WalSpider
+from scrapy_bundle.spiders.BaldorSpider import BaldorSpider
+from scrapy_bundle.spiders.WholeSpider import WholeSpider
+from scrapy_bundle.spiders.WalSpider import WalSpider
 
 filename = sys.argv[1]
 with open(filename, 'r') as f:
