@@ -8,12 +8,14 @@ class Vendor(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
+    products = db.relationship('Product', backref='vendor')
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     def to_dict(self):
         return {
             "id": self.id,
-            "name": self.name
+            "name": self.name,
+            "products": [product.to_dict() for product in self.products]
         }
     
 class Product(db.Model):
@@ -21,12 +23,15 @@ class Product(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
+    vendor_id = db.column(db.Integer, db.ForeignKey('vendors.id'))
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     def to_dict(self):
         return {
             "id": self.id,
-            "name": self.name
+            "name": self.name,
+            "vendor_id": self.vendor_id,
+            "vendor": self.vendor.name,
         }
 
 class Price(db.Model):
