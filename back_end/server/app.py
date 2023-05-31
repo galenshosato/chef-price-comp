@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request, make_response, Response, session as browser_session
-from back_end.server.extensions import *
+from extensions import *
 from models import Vendor, Product, Price
 
 

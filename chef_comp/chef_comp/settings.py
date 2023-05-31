@@ -12,17 +12,6 @@ BOT_NAME = "chef_comp"
 SPIDER_MODULES = ["chef_comp.spiders"]
 NEWSPIDER_MODULE = "chef_comp.spiders"
 
-FEEDS = {
-    'output.json': {
-        'format': 'json',
-        'encoding': 'utf8',
-        'store_empty': False,
-        'fields': None,
-        'indent': 4,
-        'overwrite': True,
-    },
-}
-
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "chef_comp (+http://www.yourdomain.com)"
@@ -102,5 +91,3 @@ ROBOTSTXT_OBEY = True
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
-
-

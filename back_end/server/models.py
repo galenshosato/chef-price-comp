@@ -1,4 +1,4 @@
-from back_end.server.extensions import db
+from extensions import db
 from sqlalchemy import JSON
 from datetime import datetime
 
@@ -23,6 +23,7 @@ class Product(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
+    unique_id = db.Column(db.String)
     vendor_id = db.column(db.Integer, db.ForeignKey('vendors.id'))
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
@@ -30,6 +31,7 @@ class Product(db.Model):
         return {
             "id": self.id,
             "name": self.name,
+            "unique_id": self.unique_id,
             "vendor_id": self.vendor_id,
             "vendor": self.vendor.name,
         }
@@ -40,6 +42,7 @@ class Price(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     price = db.Column(db.String)
     price_per_unit = db.Column(db.Integer)
+    product_id = db.column(db.String, db.ForeignKey('products.unique_id'))
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default = datetime.utcnow, onupdate = datetime.utcnow)
 
