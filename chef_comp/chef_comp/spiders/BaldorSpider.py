@@ -4,7 +4,7 @@ import re
 class BaldorSpider(scrapy.Spider):
     name = 'baldor'
     start_urls = ['https://www.baldorfood.com/products/fruits/apples?viewall=1',
-                #   'https://www.baldorfood.com/products/fruits/avocados?viewall=1',
+                  'https://www.baldorfood.com/products/fruits/avocados?viewall=1',
                 #   'https://www.baldorfood.com/products/fruits/bananas?viewall=1',
                 #   'https://www.baldorfood.com/products/fruits/berries?viewall=1',
                 #   'https://www.baldorfood.com/products/fruits/citrus?viewall=1',
