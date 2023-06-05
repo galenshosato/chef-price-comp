@@ -6,7 +6,10 @@
 import scrapy
 
 
-class ChefCompItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+
+class BaldorItem(scrapy.Item):
+    name = scrapy.Field()
+    price = scrapy.Field()
+    ppu = scrapy.Field()
+    unique_id = scrapy.Field()
+    

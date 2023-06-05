@@ -63,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   "chef_comp.pipelines.ChefCompPipeline": 300,
+   "chef_comp.pipelines.BaldorPipeline": 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
