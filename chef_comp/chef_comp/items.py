@@ -12,4 +12,5 @@ class BaldorItem(scrapy.Item):
     price = scrapy.Field()
     ppu = scrapy.Field()
     unique_id = scrapy.Field()
+    vendor_id = scrapy.Field()
     

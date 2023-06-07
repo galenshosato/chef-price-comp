@@ -16,7 +16,7 @@ class BaldorPipeline:
         with app.app_context():
             new_product = Product()
             new_product.name = item['name']
-            new_product.vendor_id = 1
+            new_product.vendor_id = item['vendor_id']
             new_product.unique_id = item['unique_id']
 
             new_price = Price()

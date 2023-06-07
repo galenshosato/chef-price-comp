@@ -48,4 +48,5 @@ class BaldorSpider(scrapy.Spider):
                 item['price'] = price_text + quantity_text
                 item['ppu'] = round(price_int / quantity_int, 2)
                 item['unique_id'] = unique_id
+                item['vendor_id'] = 1
                 yield item
