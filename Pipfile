@@ -4,7 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-scrapy = "*"
 selenium = "*"
 webdriver-manager = "*"
 pandas = "*"
@@ -13,6 +12,7 @@ flask = "*"
 flask-migrate = "*"
 flask-sqlalchemy = "*"
 sqlalchemy = "*"
+scrapy = "*"
 
 [dev-packages]
 
