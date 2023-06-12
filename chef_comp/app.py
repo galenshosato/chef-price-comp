@@ -29,6 +29,12 @@ def get_products_for_vendor(vendor_id):
     products_to_dict = [product.to_dict() for product in vendor.products]
     return make_response(jsonify(products_to_dict), 200)
 
+@app.route('/api/<int:vendor_id>/products/<string:name>')
+def get_spec_products(vendor_id, name):
+    products = Product.query.filter(Product.vendor_id == vendor_id, Product.name.contains(name)).all()
+    products_to_dict = [product.to_dict() for product in products]
+    return make_response(jsonify(products_to_dict), 200)
+
 
 
 if __name__ == '__main__':
