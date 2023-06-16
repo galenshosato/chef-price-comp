@@ -1,11 +1,11 @@
 import PriceCard from "./PriceCard"
 
-function PriceDisplay() {
+function PriceDisplay({items}) {
     return (
         <>
-                <PriceCard />
-                <PriceCard />
-                <PriceCard />
+            {items.map((item) => {
+                return <PriceCard key={item.id} item={item} />
+            })}
         </>
     )
 }

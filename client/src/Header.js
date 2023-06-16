@@ -2,10 +2,11 @@
 
 
 function Header () {
+
     return (
         <>
             <h1>
-                NoHo Hospitality Vendor Database
+                NoHo Hospitality Price Checker
             </h1>
         </>
     )

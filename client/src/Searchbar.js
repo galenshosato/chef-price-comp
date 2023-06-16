@@ -1,9 +1,30 @@
+import Button from "react-bootstrap/esm/Button"
+import Form from 'react-bootstrap/Form'
+import InputGroup from 'react-bootstrap/InputGroup'
+
+function Searchbar({house, setItems, houseObj}) {
+
+    const vendorIds = houseObj[house]
+    
+    function onSubmit(e) {
+        // Clear setItems
+        // Build fetch in a loop around vendorIds
+        // "/api/{vendorId}/products/{searchTerm}"
+        // Append to setItems
+    }
 
 
-function Searchbar() {
+
     return (
         <>
-            <h3>This is where the search bar goes</h3>
+            <InputGroup className="mb-3">
+                <Form.Control 
+                    placeholder = "Enter Items"
+                />
+                <Button variant="secondary">
+                    Submit
+                </Button>
+            </InputGroup>
         </>
     )
 }

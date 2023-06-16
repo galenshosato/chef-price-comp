@@ -1,9 +1,18 @@
 
 
-function PriceCard () {
+function PriceCard ({item}) {
+
+    // Build Card
+
+    // Title of Vendor
+    // Title of Item
+    // Price
+    // Price Per Unit
+    // Last Time It was Updated
+
     return (
         <>
-            <h5>These are the cards with the individual information </h5>
+            <h5>Holder</h5>
         </>
     )
 }
