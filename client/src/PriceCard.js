@@ -1,18 +1,20 @@
-
+import Card from 'react-bootstrap/Card'
 
 function PriceCard ({item}) {
 
     // Build Card
 
-    // Title of Vendor
-    // Title of Item
-    // Price
-    // Price Per Unit
-    // Last Time It was Updated
-
     return (
         <>
-            <h5>Holder</h5>
+            <Card>
+                <Card.Body>
+                    <Card.Title>Title of Item</Card.Title>
+                    <Card.Subtitle>Title of Vendor</Card.Subtitle>
+                    <Card.Body>Price</Card.Body>
+                    <Card.Body>Price Per Unit</Card.Body>
+                    <Card.Footer>Updated At:</Card.Footer>
+                </Card.Body>
+            </Card>
         </>
     )
 }
