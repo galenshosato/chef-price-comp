@@ -1,9 +1,7 @@
 from flask import Flask, jsonify, request, make_response, Response, session as browser_session
-from .extensions import *
-from .models import Vendor, Product, Price
+from server import db, Vendor, Price, Product
 from flask_migrate import Migrate
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import MetaData
+
 
 
 app = Flask(__name__)
@@ -13,7 +11,11 @@ app.json.compact = False
 app.secret_key = 'woo secret key'
 
 db.init_app(app)
-migrate.init_app(app, db)
+migrate = Migrate(app, db)
+
+@app.route('/')
+def welcome():
+    return 'Welcome to the NHG API'
 
 @app.route('/api/vendors')
 def get_vendors():
@@ -23,12 +25,18 @@ def get_vendors():
 
 @app.route('/api/<int:vendor_id>/products')
 def get_products_for_vendor(vendor_id):
-    vendor = Vendor.query.filter_by(vendor_id=id).first()
+    vendor = Vendor.query.filter_by(id=vendor_id).first()
     products_to_dict = [product.to_dict() for product in vendor.products]
+    return make_response(jsonify(products_to_dict), 200)
+
+@app.route('/api/<int:vendor_id>/products/<string:name>')
+def get_spec_products(vendor_id, name):
+    products = Product.query.filter(Product.vendor_id == vendor_id, Product.name.contains(name)).all()
+    products_to_dict = [product.to_dict() for product in products]
     return make_response(jsonify(products_to_dict), 200)
 
 
 
 
 if __name__ == '__main__':
-    app.run(port=5555, debug=True)
+    app.run(port=5555, debug=True) 

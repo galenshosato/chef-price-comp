@@ -6,9 +6,17 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-from .app import app
-from .extensions import db
-from .models import Product, Price
+import os
+import sys
+
+project_root = os.path.abspath(os.path.join(
+                  os.path.dirname(__file__),
+                  os.pardir)
+)
+sys.path.append(project_root)
+
+from app import app
+from server import db, Product, Price
 
 class BaldorPipeline:
 
