@@ -13,10 +13,9 @@ import PriceDisplay from './PriceDisplay';
 function App() {
 
   const houseObj = {
-    "The Dutch NYC": [1,2,3],
-    "Locanda Verde": [2,3],
-    "Joe's Pub": [3],
-    "Lafayette": [1,3],
+    "The Dutch NYC": [1,2],
+    "Locanda Verde": [1],
+    "Lafayette": [2],
   }
 
   const [items, setItems] = useState([])
@@ -31,7 +30,7 @@ function App() {
       <Houses setHouse={setHouse} />
       <br></br>
       <br></br>
-      <Searchbar house={house} houseObj={houseObj} setItems={setItems}/>
+      <Searchbar house={house} houseObj={houseObj} setItems={setItems} items={items}/>
       <PriceDisplay items={items} />
     </> 
   )

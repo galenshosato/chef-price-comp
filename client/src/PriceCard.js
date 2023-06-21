@@ -4,6 +4,7 @@ function PriceCard ({item}) {
     //Adds the unit to the price
     const ogPrice=item.prices[0].price
     const priceUnit = ogPrice.slice(-2)
+    
 
 
 

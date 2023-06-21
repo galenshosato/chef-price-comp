@@ -3,22 +3,31 @@ import Button from "react-bootstrap/esm/Button"
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
 
-function Searchbar({house, setItems, houseObj}) {
+function Searchbar({house, setItems, items, houseObj}) {
 
     const vendorIds = houseObj[house]
     const [inputValue, setInputValue] = useState('')
     
+    
     function onClick(e) {
-        // Clear setItems
-        // Build fetch in a loop around vendorIds
-        // "/api/{vendorId}/products/{searchTerm}"
-        // Append to setItems
-
+    
         setItems([])
 
-        fetch(`/api/1/products/${inputValue}`)
-        .then(resp => resp.json())
-        .then(data => setItems(data))
+        Promise.all(
+            vendorIds.map(id =>
+              fetch(`/api/${id}/products/${inputValue}`)
+                .then(resp => resp.json())
+            )
+        )
+            .then(dataArray => {
+                const newItems = dataArray[0]
+                setItems(newItems)
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error)
+            })
+        
+        
     }
 
     function onChange(e) {
