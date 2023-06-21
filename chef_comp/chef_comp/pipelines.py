@@ -6,6 +6,8 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
+from datetime import datetime
+from scrapy.exceptions import DropItem
 import os
 import sys
 
@@ -18,7 +20,7 @@ sys.path.append(project_root)
 from app import app
 from server import db, Product, Price
 
-class BaldorPipeline:
+class ProductPipeline:
 
     def process_item(self, item, spider):
         with app.app_context():
@@ -36,4 +38,26 @@ class BaldorPipeline:
             db.session.add(new_price)
             db.session.commit()
 
+            return item
+
+class DatabaseCheck:
+
+    def check_item(self, item):
+        with app.app_context():
+            unique_id = item['unique_id']
+            price = item['price']
+
+            check_item = Price.query.filter_by(unique_id=unique_id).first()
+
+            if not check_item:
+                return item
+
+            if check_item.price == price:
+                raise DropItem(f"Price did not change for {unique_id}")
+                
+            check_item.price = price
+            check_item.updated_at = datetime.utcnow()
+
+            db.session.commit()
+            
             return item
