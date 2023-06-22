@@ -24,6 +24,12 @@ class ProductPipeline:
 
     def process_item(self, item, spider):
         with app.app_context():
+            unique_id = item['unique_id']
+            check_item = Product.query.filter_by(unique_id=unique_id).first()
+
+            if check_item:
+                raise DropItem("Item already exists in db")
+
             new_product = Product()
             new_product.name = item['name']
             new_product.vendor_id = item['vendor_id']

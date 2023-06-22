@@ -12,7 +12,7 @@ class BaldorSpider(scrapy.Spider):
                 #   'https://www.baldorfood.com/products/fruits/figs?viewall=1',
                   ]
 
-    cookies = { 'PHPSESSID': 'dn9ai2rmtqvkpdv2dsio6ptgmt'}
+    cookies = { 'PHPSESSID': ''}
 
     def start_requests(self):
         for url in self.start_urls:

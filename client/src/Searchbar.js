@@ -3,7 +3,7 @@ import Button from "react-bootstrap/esm/Button"
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
 
-function Searchbar({house, setItems, items, houseObj}) {
+function Searchbar({house, setItems, houseObj}) {
 
     const vendorIds = houseObj[house]
     const [inputValue, setInputValue] = useState('')
@@ -37,10 +37,10 @@ function Searchbar({house, setItems, items, houseObj}) {
 
 
     return (
-        <>
-            <InputGroup className="mb-3">
+        <div>
+            <InputGroup className="d-flex justify-content-center" style={{width: '500px'}}>
                 <Form.Control 
-                    placeholder = "Enter Items"
+                    placeholder = "Enter Item"
                     type='text'
                     value={inputValue}
                     onChange={onChange}
@@ -49,7 +49,7 @@ function Searchbar({house, setItems, items, houseObj}) {
                     Submit
                 </Button>
             </InputGroup>
-        </>
+        </div>
     )
 }
 

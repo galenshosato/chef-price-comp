@@ -6,7 +6,7 @@ function Header () {
     return (
         <>
             <h1>
-                NoHo Hospitality Price Checker
+                NoHo Hospitality Vendor Pricing
             </h1>
         </>
     )

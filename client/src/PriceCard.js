@@ -23,14 +23,20 @@ function PriceCard ({item}) {
 
     return (
         <>
-            <Card>
+            <Card style={{width: '425px'}} className='mb-3'>
                 <Card.Body>
-                    <Card.Title>{item.name}</Card.Title>
-                    <Card.Subtitle>{item.vendor}</Card.Subtitle>
-                    <Card.Subtitle>{item.unique_id}</Card.Subtitle>
-                    <Card.Body>{item.prices[0].price}</Card.Body>
-                    <Card.Body>{item.prices[0].price_per_unit} per {priceUnit}</Card.Body>
-                    <Card.Footer>Updated at: {timePart} on {datePart}</Card.Footer>
+                    <Card.Title className = 'd-flex justify-content-center'>{item.name}</Card.Title>
+                    <Card.Subtitle className='d-flex justify-content-center'>{item.vendor}</Card.Subtitle>
+                    <Card.Subtitle className='d-flex justify-content-center'>{item.unique_id}</Card.Subtitle>
+                    <Card.Body>
+                        <div className='d-flex justify-content-center'>
+                            {item.prices[0].price}<br />
+                        </div>
+                        <div className='d-flex justify-content-center'>
+                            ${item.prices[0].price_per_unit} per {priceUnit}
+                        </div>
+                    </Card.Body>
+                    <Card.Footer className='d-flex justify-content-center'>Updated at: {timePart} on {datePart}</Card.Footer>
                 </Card.Body>
             </Card>
         </>

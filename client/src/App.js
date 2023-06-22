@@ -31,6 +31,7 @@ function App() {
       <br></br>
       <br></br>
       <Searchbar house={house} houseObj={houseObj} setItems={setItems} items={items}/>
+      <br></br>
       <PriceDisplay items={items} />
     </> 
   )
