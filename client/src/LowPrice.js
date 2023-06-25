@@ -1,22 +1,12 @@
 import Alert from 'react-bootstrap/Alert'
+import LowPriceCard from './LowPriceCard'
 
-function LowPrice () {
+function LowPrice ({ lowPrice }) {
+
 
     return (
         <>
-            <Alert
-              variant='info'
-              style={{
-                position: 'fixed',
-                top: 10,
-                right: 10,
-                zIndex: 9999,
-                width: '300px',
-                height: '150px'
-              }}>
-                It worked!
-            </Alert>
-        
+            {lowPrice ? <LowPriceCard item={lowPrice} /> : null } 
         </>
     )
 }
