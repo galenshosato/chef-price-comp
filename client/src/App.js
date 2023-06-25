@@ -6,6 +6,7 @@ import Header from './Header';
 import Houses from './Houses';
 import Searchbar from './Searchbar';
 import PriceDisplay from './PriceDisplay';
+import LowPrice from './LowPrice';
 
 
 
@@ -25,6 +26,7 @@ function App() {
   return (
     <>
       <Header />
+      <LowPrice />
       <br></br>
       <br></br>
       <Houses setHouse={setHouse} />
