@@ -6,10 +6,10 @@ class BaldorSpider(scrapy.Spider):
     name = 'baldor'
     start_urls = ['https://www.baldorfood.com/products/fruits/apples?viewall=1',
                   'https://www.baldorfood.com/products/fruits/avocados?viewall=1',
-                #   'https://www.baldorfood.com/products/fruits/bananas?viewall=1',
-                #   'https://www.baldorfood.com/products/fruits/berries?viewall=1',
-                #   'https://www.baldorfood.com/products/fruits/citrus?viewall=1',
-                #   'https://www.baldorfood.com/products/fruits/figs?viewall=1',
+                  'https://www.baldorfood.com/products/fruits/bananas?viewall=1',
+                  'https://www.baldorfood.com/products/fruits/berries?viewall=1',
+                  'https://www.baldorfood.com/products/fruits/citrus?viewall=1',
+                  'https://www.baldorfood.com/products/fruits/figs?viewall=1',
                   ]
 
     cookies = { 'PHPSESSID': ''}
@@ -31,12 +31,14 @@ class BaldorSpider(scrapy.Spider):
                 numbers = []
                 if quantity_text == '1/2 CRATE':
                     numbers = ['.5']
+                elif quantity_text == 'DOZ':
+                    numbers = ['12']
                 else:
                    numbers = re.findall(r'\d+', quantity_text)
                 quantity_int=''
                 for number in numbers:
                     number = float(number)
-                    if 1 < number < 3:
+                    if 1 <= number < 3:
                         quantity_int = number 
                     elif number >= 3:
                         quantity_int = number

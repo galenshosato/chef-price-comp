@@ -36,7 +36,7 @@ function PriceCard ({item}) {
                             ${item.prices[0].price_per_unit} per {priceUnit}
                         </div>
                     </Card.Body>
-                    <Card.Footer className='d-flex justify-content-center'>Updated at: {timePart} on {datePart}</Card.Footer>
+                    <Card.Footer className='d-flex justify-content-center'>Price Changed: {timePart} on {datePart}</Card.Footer>
                 </Card.Body>
             </Card>
         </>

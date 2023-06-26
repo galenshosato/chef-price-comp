@@ -1,4 +1,3 @@
-import Alert from 'react-bootstrap/Alert'
 import LowPriceCard from './LowPriceCard'
 
 function LowPrice ({ lowPrice }) {

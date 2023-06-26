@@ -25,7 +25,24 @@ class ProductPipeline:
     def process_item(self, item, spider):
         with app.app_context():
             unique_id = item['unique_id']
+            price = item['price']
+            ppu = item['ppu']
             check_item = Product.query.filter_by(unique_id=unique_id).first()
+            check_price = Price.query.filter(Price.product_id==unique_id).first()
+
+            if check_price:
+                if check_price.price == price and check_price.price_per_unit == ppu:
+                    raise DropItem(f"Price did not change for {unique_id}")
+                else:
+                    check_price.price = price
+                    check_price.price_per_unit = ppu
+                    check_price.updated_at = datetime.utcnow()
+                    print('Price was updated')
+
+                    db.session.commit()
+            
+                    return item
+
 
             if check_item:
                 raise DropItem("Item already exists in db")
@@ -46,24 +63,3 @@ class ProductPipeline:
 
             return item
 
-class DatabaseCheck:
-
-    def check_item(self, item):
-        with app.app_context():
-            unique_id = item['unique_id']
-            price = item['price']
-
-            check_item = Price.query.filter_by(unique_id=unique_id).first()
-
-            if not check_item:
-                return item
-
-            if check_item.price == price:
-                raise DropItem(f"Price did not change for {unique_id}")
-                
-            check_item.price = price
-            check_item.updated_at = datetime.utcnow()
-
-            db.session.commit()
-            
-            return item

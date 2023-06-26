@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request, make_response, Response, session as browser_session
 from server import db, Vendor, Price, Product
 from flask_migrate import Migrate
+from urllib.parse import unquote
 
 
 
@@ -29,9 +30,10 @@ def get_products_for_vendor(vendor_id):
     products_to_dict = [product.to_dict() for product in vendor.products]
     return make_response(jsonify(products_to_dict), 200)
 
-@app.route('/api/<int:vendor_id>/products/<string:name>')
+@app.route('/api/<int:vendor_id>/products/<path:name>')
 def get_spec_products(vendor_id, name):
-    products = Product.query.filter(Product.vendor_id == vendor_id, Product.name.contains(name)).all()
+    decoded_name = unquote(name)
+    products = Product.query.filter(Product.vendor_id == vendor_id, Product.name.contains(decoded_name)).all()
     products_to_dict = [product.to_dict() for product in products]
     return make_response(jsonify(products_to_dict), 200)
 
