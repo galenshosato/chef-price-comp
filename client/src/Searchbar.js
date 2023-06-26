@@ -35,7 +35,10 @@ function Searchbar({house, setItems, houseObj, items, setLowPrice}) {
             )
         )
             .then(dataArray => {
-                const newItems = dataArray[0]
+                let newItems = []
+                for (let i = 0; i < dataArray.length; i++) {
+                    newItems = newItems.concat(dataArray[i])
+                }
                 setItems(newItems)
                 return newItems
             })

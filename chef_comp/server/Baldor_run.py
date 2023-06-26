@@ -10,6 +10,7 @@ project_root = os.path.abspath(os.path.join(
 sys.path.append(project_root)
 
 from chef_comp.spiders.BaldorSpider import BaldorSpider
+from chef_comp.spiders.WholeSpider import WholeSpider
 
 
 
@@ -19,7 +20,7 @@ def handle_data(item, spider):
     return item
 
 process = CrawlerProcess(get_project_settings())
-process.crawl(BaldorSpider)
+process.crawl(WholeSpider)
 process.start()
 
 
