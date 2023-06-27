@@ -1,9 +1,8 @@
 from app import app
-from server import Vendor, db
+from server import Vendor, Product, db
 
 if __name__ == '__main__':
     with app.app_context():
-        whole = Vendor(id=2, name="Whole Foods")
-        db.session.add(whole)
+        Product.query.filter(Product.vendor_id == 2).delete()
         db.session.commit()
         

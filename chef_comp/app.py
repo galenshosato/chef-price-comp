@@ -34,6 +34,8 @@ def get_products_for_vendor(vendor_id):
 def get_spec_products(vendor_id, name):
     decoded_name = unquote(name)
     products = Product.query.filter(Product.vendor_id == vendor_id, Product.name.contains(decoded_name)).all()
+    if not products:
+        return make_response(jsonify({'Error':'No products match that query'}), 404)
     products_to_dict = [product.to_dict() for product in products]
     return make_response(jsonify(products_to_dict), 200)
 

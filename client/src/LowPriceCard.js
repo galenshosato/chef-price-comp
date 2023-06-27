@@ -5,22 +5,6 @@ function LowPriceCard ({item}) {
     const ogPrice=item.prices[0].price
     const priceUnit = ogPrice.slice(-2)
     
-
-
-
-    //This sets the date in a easier to read time
-    const datestring = item.prices[0].updated_at
-    const date = new Date(datestring)
-    const options = {
-        month: '2-digit',
-        day: '2-digit',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-    }
-    const formattedDate = date.toLocaleString('en-US', options)
-    const [datePart, timePart] = formattedDate.split(', ')
-
     return (
         <>
             <Card style={{width: '425px',
@@ -29,7 +13,7 @@ function LowPriceCard ({item}) {
                           right: 10,
                           zIndex: 9999,}}
                           className='mb-3'>
-                <Card.Header className = 'd-flex justify-content-center'><strong>Cheapest Option</strong></Card.Header>
+                <Card.Header className = 'd-flex justify-content-center' style={{backgroundColor:'green'}}><strong>Cheapest Option</strong></Card.Header>
                 <Card.Body>
                     <Card.Title className = 'd-flex justify-content-center'>{item.name}</Card.Title>
                     <Card.Subtitle className='d-flex justify-content-center'>{item.vendor}</Card.Subtitle>

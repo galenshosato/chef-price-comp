@@ -8,9 +8,8 @@ class WholeSpider(scrapy.Spider):
     start_urls = ['https://www.wholefoodsmarket.com/products/produce']
 
     cookies = {
-       
-        }
 
+        }
 
 
     def start_requests(self):
@@ -35,7 +34,11 @@ class WholeSpider(scrapy.Spider):
 
             item = {}
             item['name'] = name
-            item['price'] = number
+            if "lb" in price:
+                item['price'] = price.replace('/lb', ' LB' )
+            else:
+                price = price + ' CT'
+                item['price'] = price
             item['ppu'] = number
             item['unique_id'] = name
             item['vendor_id'] = 2
