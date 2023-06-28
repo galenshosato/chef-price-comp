@@ -3,7 +3,7 @@ import Button from "react-bootstrap/esm/Button"
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
 
-function Searchbar({house, setItems, houseObj, items, setLowPrice}) {
+function Searchbar({house, setItems, houseObj, setLowPrice, setNoProduct}) {
 
     const vendorIds = houseObj[house]
     const [inputValue, setInputValue] = useState('')
@@ -36,11 +36,23 @@ function Searchbar({house, setItems, houseObj, items, setLowPrice}) {
         )
             .then(dataArray => {
                 let newItems = []
+
                 for (let i = 0; i < dataArray.length; i++) {
+                    if (dataArray[i]['Error'] === 'No products match that query') {
+                        continue
+                    }
                     newItems = newItems.concat(dataArray[i])
                 }
-                setItems(newItems)
-                return newItems
+
+                if (newItems.length === 0) {
+                    setNoProduct(true)
+                    setLowPrice(false)
+                    return
+                }
+                else {
+                    setNoProduct(false)
+                    setItems(newItems)
+                    return newItems }
             })
             .then(data => {
                 const minItem = getLowestItem(data)

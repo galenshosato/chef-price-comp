@@ -21,6 +21,8 @@ function PriceCard ({item}) {
     const formattedDate = date.toLocaleString('en-US', options)
     const [datePart, timePart] = formattedDate.split(', ')
 
+    
+
     return (
         <>
             <Card style={{width: '425px'}} className='mb-3'>

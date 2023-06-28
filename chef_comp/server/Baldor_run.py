@@ -20,7 +20,7 @@ def handle_data(item, spider):
     return item
 
 process = CrawlerProcess(get_project_settings())
-process.crawl(WholeSpider)
+process.crawl(BaldorSpider)
 process.start()
 
 

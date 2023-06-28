@@ -22,6 +22,7 @@ function App() {
   const [items, setItems] = useState([])
   const [house, setHouse] = useState()
   const [lowPrice, setLowPrice] = useState(null)
+  const [noProduct, setNoProduct] = useState(false)
 
 
   
@@ -35,9 +36,9 @@ function App() {
       <Houses setHouse={setHouse} />
       <br></br>
       <br></br>
-      <Searchbar house={house} houseObj={houseObj} setItems={setItems} items={items} setLowPrice={setLowPrice}/>
+      <Searchbar house={house} houseObj={houseObj} setItems={setItems} setNoProduct={setNoProduct} setLowPrice={setLowPrice}/>
       <br></br>
-      <PriceDisplay items={items} />
+      <PriceDisplay items={items} noProduct={noProduct} />
     </> 
   )
 }
