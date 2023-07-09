@@ -16,5 +16,5 @@ In order to run the app you must:
 3. In a different terminal, navigate to chef-price-comp/client and run ``` npm install && npm start ``` to start the front end
 
 
-#Scrapy Spiders
+
 
