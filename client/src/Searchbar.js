@@ -70,7 +70,7 @@ function Searchbar({house, setItems, houseObj, setLowPrice, setNoProduct}) {
 
 
     return (
-        <div>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
             <InputGroup className="d-flex justify-content-center" style={{width: '500px'}}>
                 <Form.Control 
                     placeholder = "Enter Item"
@@ -82,6 +82,14 @@ function Searchbar({house, setItems, houseObj, setLowPrice, setNoProduct}) {
                     Submit
                 </Button>
             </InputGroup>
+            <div style={{ marginLeft: '100px', transform: 'scale(1.3)' }}>
+                <label>
+                    <input 
+                        type='checkbox'
+                    />
+                    <span style={{ marginLeft: '5px' }}>Exact product</span>
+                </label>
+            </div>
         </div>
     )
 }

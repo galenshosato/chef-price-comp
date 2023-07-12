@@ -19,6 +19,7 @@ def handle_data(item, spider):
     # do something with the scraped data
     return item
 
+
 process = CrawlerProcess(get_project_settings())
 process.crawl(BaldorSpider)
 process.start()
