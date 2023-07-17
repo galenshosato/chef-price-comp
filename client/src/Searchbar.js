@@ -33,8 +33,39 @@ function Searchbar({house, setItems, houseObj, setLowPrice, setNoProduct}) {
         setItems([])
 
         if (isChecked === true) {
-            console.log("This is the exact product")
-        }
+            Promise.all(
+                vendorIds.map(id =>
+                fetch(`/api/${id}/exactproduct/${inputValue}`)
+                    .then(resp => resp.json())
+                )
+            )
+                .then(dataArray => {
+                    let newItems = []
+
+                    for (let i = 0; i < dataArray.length; i++) {
+                        if (dataArray[i]['Error'] === 'No products match that query') {
+                            continue
+                        }
+                        newItems = newItems.concat(dataArray[i])
+                    }
+
+                    if (newItems.length === 0) {
+                        setNoProduct(true)
+                        setLowPrice(false)
+                        return
+                    }
+                    else {
+                        setNoProduct(false)
+                        setItems(newItems)
+                        return newItems }
+                })
+                .then(data => {
+                    const minItem = getLowestItem(data)
+                    setLowPrice(minItem)
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error)
+                })}
 
         else {
             Promise.all(
