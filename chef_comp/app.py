@@ -39,6 +39,14 @@ def get_spec_products(vendor_id, name):
     products_to_dict = [product.to_dict() for product in products]
     return make_response(jsonify(products_to_dict), 200)
 
+@app.route('/api/<int:vendor_id>/exactproduct/<str:name>')
+def get_exact_product(vendor_id, name):
+    title_case_name = name.title()
+    products = Product.query.filter(Product,vendor_id == vendor_id, Product.name == title_case_name).all()
+    if not products:
+        return make_response(jsonify({'Error':'No products match that query'}), 404)
+    products_to_dict = [product.to_dict() for product in products]
+    return make_response(jsonify(products_to_dict), 200)
 
 
 

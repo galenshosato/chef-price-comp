@@ -7,6 +7,7 @@ function Searchbar({house, setItems, houseObj, setLowPrice, setNoProduct}) {
 
     const vendorIds = houseObj[house]
     const [inputValue, setInputValue] = useState('')
+    const [isChecked, setIsChecked] = useState(false)
     
     function getLowestItem (arr) {
         let lowest = 100000
@@ -22,45 +23,53 @@ function Searchbar({house, setItems, houseObj, setLowPrice, setNoProduct}) {
         }
         return minItem
       }
-    
+
+    function handleCheckboxChange(e) {
+        setIsChecked(prevState => !prevState)
+    }
     
     function onClick(e) {
     
         setItems([])
 
-        Promise.all(
-            vendorIds.map(id =>
-              fetch(`/api/${id}/products/${inputValue}`)
-                .then(resp => resp.json())
+        if (isChecked === true) {
+            console.log("This is the exact product")
+        }
+
+        else {
+            Promise.all(
+                vendorIds.map(id =>
+                fetch(`/api/${id}/products/${inputValue}`)
+                    .then(resp => resp.json())
+                )
             )
-        )
-            .then(dataArray => {
-                let newItems = []
+                .then(dataArray => {
+                    let newItems = []
 
-                for (let i = 0; i < dataArray.length; i++) {
-                    if (dataArray[i]['Error'] === 'No products match that query') {
-                        continue
+                    for (let i = 0; i < dataArray.length; i++) {
+                        if (dataArray[i]['Error'] === 'No products match that query') {
+                            continue
+                        }
+                        newItems = newItems.concat(dataArray[i])
                     }
-                    newItems = newItems.concat(dataArray[i])
-                }
 
-                if (newItems.length === 0) {
-                    setNoProduct(true)
-                    setLowPrice(false)
-                    return
-                }
-                else {
-                    setNoProduct(false)
-                    setItems(newItems)
-                    return newItems }
-            })
-            .then(data => {
-                const minItem = getLowestItem(data)
-                setLowPrice(minItem)
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error)
-            })
+                    if (newItems.length === 0) {
+                        setNoProduct(true)
+                        setLowPrice(false)
+                        return
+                    }
+                    else {
+                        setNoProduct(false)
+                        setItems(newItems)
+                        return newItems }
+                })
+                .then(data => {
+                    const minItem = getLowestItem(data)
+                    setLowPrice(minItem)
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error)
+                })}
     }
 
     function onChange(e) {
@@ -86,6 +95,8 @@ function Searchbar({house, setItems, houseObj, setLowPrice, setNoProduct}) {
                 <label>
                     <input 
                         type='checkbox'
+                        checked={isChecked}
+                        onChange={handleCheckboxChange}
                     />
                     <span style={{ marginLeft: '5px' }}>Exact product</span>
                 </label>
